@@ -13,7 +13,8 @@ public class Item {
         this.sellIn = sellIn;
         this.quality = quality;
     }
-
+    protected void tick() {
+    }
    @Override
    public String toString() {
         return this.name + ", " + this.sellIn + ", " + this.quality;
