@@ -15,9 +15,15 @@
         <maven.maven-compiler-plugin.version>3.1</maven.maven-compiler-plugin.version>
         <maven.maven-surefire-plugin.version>3.0.0-M4</maven.maven-surefire-plugin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <approvaltests.version>17.1.0</approvaltests.version>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>com.approvaltests</groupId>
+            <artifactId>approvaltests</artifactId>
+            <version>${approvaltests.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
