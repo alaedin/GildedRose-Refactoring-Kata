@@ -1,31 +1,23 @@
 package com.gildedrose;
 
+import com.gildedrose.entity.Item;
+import com.gildedrose.utils.ConstantUtils;
 import org.approvaltests.combinations.CombinationApprovals;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.lambda.utils.Range;
 
+import static org.apache.commons.lang3.math.NumberUtils.BYTE_MINUS_ONE;
+
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-class GildedRoseTest {
+class GildedRoseTest implements ConstantUtils {
 
-    private String NORMAL;
-    private String BRIE;
-    private String BACKSTAGE;
-    private String SULFURAS;
 
-    @BeforeAll
-    void init() {
-        NORMAL = "foo";
-        BRIE = "Aged Brie";
-        BACKSTAGE = "Backstage passes to a TAFKAL80ETC concert";
-        SULFURAS = "Sulfuras, Hand of Ragnaros";
-    }
 
     @Test
     void updateQuality() {
-        Integer[] sellInRange = Range.get(-1, 11);
-        Integer[] qualityRange = Range.get(0, 50);
+        Integer[] sellInRange = Range.get(BYTE_MINUS_ONE, MAX_REMINING_DAYS);
+        Integer[] qualityRange = Range.get(ZERO, MAX_QUALITY);
         String[] names = {NORMAL, BRIE, BACKSTAGE, SULFURAS,};
 
         CombinationApprovals.verifyAllCombinations(
