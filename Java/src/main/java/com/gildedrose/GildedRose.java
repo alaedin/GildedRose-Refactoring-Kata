@@ -19,6 +19,9 @@ class GildedRose {
     }
 
     public Item updateQuality(Item item) {
+
+        ItemDefiner.required(item);
+
         item = ItemDefiner.identifyItemType(item);
         item.update();
         return item;

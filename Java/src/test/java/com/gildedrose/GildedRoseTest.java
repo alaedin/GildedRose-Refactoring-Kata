@@ -18,7 +18,7 @@ class GildedRoseTest implements ConstantUtils {
     void updateQuality() {
         Integer[] sellInRange = Range.get(BYTE_MINUS_ONE, MAX_REMINING_DAYS);
         Integer[] qualityRange = Range.get(ZERO, MAX_QUALITY);
-        String[] names = {NORMAL, BRIE, BACKSTAGE, SULFURAS,};
+        String[] names = {NORMAL, BRIE, BACKSTAGE, SULFURAS,CONJURED, };
 
         CombinationApprovals.verifyAllCombinations(
             this::doUpdateQuality,
