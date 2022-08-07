@@ -30,6 +30,7 @@ public class Item implements ConstantUtils {
     public void increaseQuality() {
         quality++;
     }
+
     public boolean isQualityBiggerThan(int quality) {
         return this.quality > quality;
     }
@@ -46,7 +47,19 @@ public class Item implements ConstantUtils {
         return this.sellIn < sellIn;
     }
 
-    public void resetQuality(){
+    public void decreaseQualityBy(int degrade) {
+        quality -= degrade;
+    }
+
+    public void decreaseSellIn() {
+        sellIn--;
+    }
+
+    public boolean isSellInLessOrEqualTo(int sellIn) {
+        return this.sellIn < sellIn;
+    }
+
+    public void resetQuality() {
         quality = ZERO;
     }
 

@@ -7,7 +7,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ItemDefiner implements ConstantUtils{
+public class ItemDefiner implements ConstantUtils {
 
     private static final Class<Normal> DEFAULT_ITEM_TYPE = Normal.class;
 
@@ -18,9 +18,10 @@ public class ItemDefiner implements ConstantUtils{
         SPECIALIZED_ITEM_TYPE.put(BRIE, Brie.class.getName());
         SPECIALIZED_ITEM_TYPE.put(BACKSTAGE, Backstage.class.getName());
         SPECIALIZED_ITEM_TYPE.put(SULFURAS, Sulfuras.class.getName());
+        SPECIALIZED_ITEM_TYPE.put(CONJURED, Conjured.class.getName());
     }
 
-    public static  <T extends Item> Item identifyItemType(Item item) {
+    public static <T extends Item> Item identifyItemType(Item item) {
 
         Class<?> clazz;
         try {
