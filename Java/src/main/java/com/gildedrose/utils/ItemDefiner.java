@@ -6,6 +6,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class ItemDefiner implements ConstantUtils {
 
@@ -22,6 +23,8 @@ public class ItemDefiner implements ConstantUtils {
     }
 
     public static <T extends Item> Item identifyItemType(Item item) {
+
+        required(item);
 
         Class<?> clazz;
         try {
@@ -40,6 +43,12 @@ public class ItemDefiner implements ConstantUtils {
             e.printStackTrace();
         }
         return item;
+    }
+
+    public static void required(Item item) {
+        Objects.requireNonNull(item);
+        Objects.requireNonNull(item.getName());
+
     }
 
 }
